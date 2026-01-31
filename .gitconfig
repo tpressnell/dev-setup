@@ -1,11 +1,14 @@
 [alias]
-	st = status
-	co = checkout
-	lg = log --oneline -n 10
-	ds = diff --staged
-	cm = commit -m
-[user]
-	email = tyler.pressnell86@gmail.com
-	name = Tyler Pressnell
+        st = status
+        co = checkout
+        lg = log --oneline -n 10
+        lgn = log --oneline -n
+        r = restore
+        ds = diff --staged
+        cm = commit -m
+[core]
+        editor = vim
 [init]
-	defaultBranch = main
+        defaultBranch = main
+[include]
+        path = ~/.gitconfig-personal
