@@ -1,0 +1,11 @@
+[alias]
+	st = status
+	co = checkout
+	lg = log --oneline -n 10
+	ds = diff --staged
+	cm = commit -m
+[user]
+	email = tyler.pressnell86@gmail.com
+	name = Tyler Pressnell
+[init]
+	defaultBranch = main
