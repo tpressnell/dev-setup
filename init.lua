@@ -12,12 +12,6 @@ vim.lsp.config['luals'] = {
 vim.lsp.enable('luals')
 -- download lua-language-server, symlink in usr/bin
 
-vim.lsp.config['python'] = {
-        cmd = { 'pylsp' },
-        filetypes = { 'py' },
-}
-vim.lsp.enable('python')
-
 vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
         callback = function(args)
