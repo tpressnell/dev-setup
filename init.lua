@@ -56,14 +56,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
 
 -- gri is goto implementation
 -- grr is show references
--- <C-w>d is show whatever the error is
 -- K shows whatever you would be "hovering" over in a regular IDE
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.list = true
-vim.opt.listchars = { trail = '~', tab = '>+' }
+vim.opt.listchars = { trail = '~', tab = '> ' }
 vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
