@@ -68,6 +68,7 @@ vim.opt.cursorline = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 vim.opt.grepprg = 'ack --nogroup --column $*'
 vim.opt.grepformat = '%f:%l:%c:%m'
+vim.opt.wildmenu = true
 
 vim.g.mapleader = ' '
 vim.keymap.set('c', 'grep', 'grep!', {})
@@ -80,7 +81,7 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
 
 vim.api.nvim_create_autocmd('VimEnter', {
         callback = function()
-                local cwd = vim.uv.cwd()
+                local cwd = vim.uv.cwd() .. "/**"
                 vim.opt.path:append(cwd)
         end
 })
@@ -96,6 +97,7 @@ vim.keymap.set('n', '<leader>t', ':vert term<CR>', { desc = 'vertical split term
 vim.keymap.set('n', '<M-j>', ':cnext<CR>', { desc = 'next quickfix item' })
 vim.keymap.set('n', '<M-k>', ':cprev<CR>', { desc = 'previous quickfix item' })
 vim.keymap.set('n', '<F1>', 'yiw :grep! <C-R>\"<CR>', { desc = 'search for word under cursor' })
+vim.keymap.set('n', '<F4>', 'yiw :%s/<C-R>\"//g<left><Left>', { desc = 'replace every instance in file' })
 vim.keymap.set('t', '<C-W><C-W>', '<C-\\><C-N><C-W><C-W>', { desc = 'Switch from terminal' })
 
 vim.api.nvim_create_user_command('E', 'Explore', {})
