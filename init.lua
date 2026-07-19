@@ -17,6 +17,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
                 local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
+                -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+                local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+                client.server_capabilities.completionProvider.triggerCharacters = chars
+
                 -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
                 if client:supports_method('textDocument/completion') then
                         vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
@@ -65,7 +69,7 @@ vim.opt.list = true
 vim.opt.listchars = { trail = '~', tab = '> ' }
 vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noinsert' }
 vim.opt.grepprg = 'ack --nogroup --column $*'
 vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.wildmenu = true
