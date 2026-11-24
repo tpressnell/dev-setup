@@ -1,6 +1,7 @@
 [alias]
         st = status
         co = checkout
+        sw = switch
         lg = log --oneline -n 10
         lgn = log --oneline -n
         r = restore
@@ -10,5 +11,7 @@
         editor = vim
 [init]
         defaultBranch = main
+[pull]
+        rebase = true
 [include]
         path = ~/.gitconfig-personal
