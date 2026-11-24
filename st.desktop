@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=st
+Comment=Simple Terminal Emulator
+Exec=/usr/local/bin/st
+Icon=/home/tyler/Pictures/terminal-bash-svgrepo-com.svg
+Terminal=false
+Categories=Utility;
+StartupWMClass=st-256color
